@@ -16,7 +16,7 @@ var HIT_CHANCE = 0.75;
 var MIN_DAMAGE = 15, MAX_DAMAGE = 21;
 
 if (random() <= HIT_CHANCE) {
-  var damage = random.nextInt(MIN_DAMAGE, MAX_DAMAGE);
+  var damage = random.nextInt(MIN_DAMAGE, MAX_DAMAGE + 1);
   console.log('You hit the zombie for %d damage!', damage);
 } else {
   console.log('You missed!');
