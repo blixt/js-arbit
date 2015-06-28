@@ -6,12 +6,6 @@
  * https://github.com/nquinlan/better-random-numbers-for-javascript-mirror
  */
 function alea(s0, s1, c) {
-  if (!s0 && !s1) {
-    s0 = new Date() / 8640000000000000;
-    s1 = 1 - s0;
-  }
-  if (!c) c = 1;
-
   var f = function aleaStep() {
     var t = 2091639 * s0 + c * 2.3283064365386963e-10;
     s0 = s1;
@@ -57,8 +51,30 @@ function aleaNextInt(minOrMax, opt_max) {
   return Math.floor(this.nextFloat(minOrMax, opt_max));
 }
 
-alea.fromState = function aleaFromState(state) {
+/**
+ * Returns a new PRNG seeded with the provided value.
+ */
+function aleaFromSeed(seed) {
+  var s0, s1, h, n = 0xefc8249d, v;
+  seed = 'X' + (seed || +new Date());
+  for (var i = 0; i < 2; i++) {
+    for (var j = 0; j < seed.length; j++) {
+      n += seed.charCodeAt(j);
+      h = 0.02519603282416938 * n;
+      n = h >>> 0; h -= n; h *= n;
+      n = h >>> 0; h -= n; n += h * 0x100000000;
+    }
+    v = (n >>> 0) * 2.3283064365386963e-10;
+    if (i === 0) s0 = v; else s1 = v;
+  }
+  return alea(s0, s1, 1);
+}
+
+/**
+ * Returns a number generator with the specified state.
+ */
+aleaFromSeed.fromState = function aleaFromState(state) {
   return alea.apply(null, state);
 };
 
-module.exports = alea;
+module.exports = aleaFromSeed;

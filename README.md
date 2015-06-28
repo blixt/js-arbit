@@ -27,10 +27,10 @@ if (random() <= HIT_CHANCE) {
 Functions
 ---------
 
-### `var generator = arbit(seed1, seed2)`
+### `var generator = arbit(seed)`
 
 The package itself is just a single function which returns a number
-generator using the provided seeds.
+generator using the provided seed.
 
 
 ### `var generator = arbit.fromState(state)`
@@ -72,4 +72,4 @@ Same as `nextFloat(min, max)`, but coerces the value to an integer with
 
 Returns the current state of the generator. This can be passed into
 `arbit.fromState(state)` to get back another generator in the same
-state (e.g., it will generate the same sequence of numbers).
+state (i.e., it will generate the same sequence of numbers).
