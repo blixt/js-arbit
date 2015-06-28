@@ -1,0 +1,30 @@
+{
+  "name": "arbit",
+  "version": "0.0.0",
+  "description": "A tiny pseudo-random number generator.",
+  "author": "Blixt <me@blixt.nyc>",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "node test.js"
+  },
+  "homepage": "https://github.com/blixt/js-arbit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blixt/js-arbit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blixt/js-arbit/issues"
+  },
+  "keywords": [
+    "prng",
+    "random"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "^4.0.0"
+  }
+}
