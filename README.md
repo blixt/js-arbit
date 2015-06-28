@@ -30,7 +30,7 @@ Functions
 ### `var generator = arbit(seed)`
 
 The package itself is just a single function which returns a number
-generator using the provided seed.
+generator using the provided seed. The seed can be any string.
 
 
 ### `var generator = arbit.fromState(state)`
