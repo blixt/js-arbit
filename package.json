@@ -1,6 +1,6 @@
 {
   "name": "arbit",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A tiny pseudo-random number generator.",
   "author": "Blixt <me@blixt.nyc>",
   "license": "MIT",
