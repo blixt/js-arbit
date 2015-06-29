@@ -4,7 +4,7 @@ var fs = require('fs');
 var arbit = require('./');
 var random = arbit();
 
-console.log('Creating DieHarder test data (~5 GB)');
+console.log('Creating Dieharder test data (~5 GB)');
 var COUNT = 500000000;
 var out = fs.openSync('./dieharder.txt', 'w');
 fs.writeSync(out, '# arbit\n');
