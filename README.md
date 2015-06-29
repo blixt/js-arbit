@@ -73,3 +73,25 @@ Same as `nextFloat(min, max)`, but coerces the value to an integer with
 Returns the current state of the generator. This can be passed into
 `arbit.fromState(state)` to get back another generator in the same
 state (i.e., it will generate the same sequence of numbers).
+
+
+Verifying the PRNG quality
+--------------------------
+
+In this repo you will find the script `dieharder.bash`. Running it will
+generate a ~5 GB file sampling numbers from *arbit*, then pass it on to
+[DieHarder](http://www.phy.duke.edu/~rgb/General/dieharder.php) which
+will test the quality of the output (how unpredictable it is).
+
+Before you can run the script, you need to install DieHarder. If you
+have [Homebrew](http://brew.sh/) installed, doing so is easy:
+
+```bash
+brew install dieharder
+```
+
+You can now run the test:
+
+```bash
+./dieharder.bash
+```

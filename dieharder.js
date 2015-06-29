@@ -1,16 +1,3 @@
-/*
- * DieHarder test suite
- *
- * This will test the PRNG using DieHarder. Note that this will take a really
- * long time, and that it will use up about 5 GB of disk space.
- *
- * For information on how to install DieHarder:
- * https://gist.github.com/blixt/9abfafdd0ada0f4f6f26
- *
- * For more information about DieHarder, visit:
- * http://www.phy.duke.edu/~rgb/General/dieharder.php
- */
-
 var exec = require('child_process').exec;
 var fs = require('fs');
 
@@ -38,9 +25,3 @@ for (var i = 0; i < COUNT; i++) {
 process.stdout.write('DONE\n');
 
 fs.closeSync(out);
-
-console.log('Running DieHarder test');
-exec('dieharder -g 202 -f dieharder.txt -a', function (error, stdout, stderr) {
-  console.log(stdout);
-  console.log(stderr);
-});
